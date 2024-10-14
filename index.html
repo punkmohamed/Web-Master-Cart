@@ -41,20 +41,22 @@
                     </div>
                 </div>
                 <div class="hidden sm:flex items-center space-x-5">
-                    <div class="py-2 px-3 font-medium text-gray-500">
+                    <div class="welcome hidden py-2 px-3 font-medium text-gray-500">
                         <i class="fas fa-user mr-2"></i>Welcome, <span id="" class="userName"> </span>
                     </div>
 
                     <a href="./pages/cart.html"
-                        class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300 relative">
+                        class="cartShow hidden py-2 px-3 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300 relative">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="ml-1">Cart</span>
                         <span id=""
                             class="cartCount absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"></span>
                     </a>
                     <button id=""
-                        class="logOut py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Log
+                        class="logOut hidden py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Log
                         Out</button>
+                    <a href="./pages/login.html"
+                        class="login  py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Login</a>
                 </div>
                 <div class="sm:hidden flex items-center">
                     <button class="outline-none mobile-menu-button">
@@ -70,15 +72,19 @@
                 </li>
                 <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">About</a></li>
                 </li>
-                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Welcome,
+                <li class="welcome"><a href="#"
+                        class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Welcome,
                         <span class="userName"></span></a></li>
-                <li><a href="./pages/cart.html"
+                <li class="cartShow hidden"><a href="./pages/cart.html"
                         class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Cart
                         <span class="cartCount p-2 px-3 rounded-full bg-red-600 text-white"></span></a>
                 </li>
-                <li class="logOut"><a href="#"
+                <li class="logOut hidden"><a href="#"
                         class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Log
                         Out</a>
+                </li>
+                <li class="login"> <a href="./pages/login.html"
+                        class="  py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Login</a>
                 </li>
             </ul>
         </div>

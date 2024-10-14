@@ -6,15 +6,18 @@ if (!Array.isArray(cart)) {
     cart = [];
 }
 if (!currentUser) {
-    setTimeout(() => {
-        window.location.href = '../pages/login.html';
-    }, 1000);
+
+    window.location.href = '../pages/login.html';
+
     // alert('You are not logged in. Please log in.');
     showToast("You are not logged in. Please log in.", "error");
 } else {
+    const welcome = document.querySelectorAll('.welcome')
     const userName = document.querySelectorAll('.userName')
     cartCount = document.querySelectorAll('.cartCount')
     const logOut = document.querySelectorAll('.logOut')
+    const cartShow = document.querySelectorAll('.cartShow')
+    const login = document.querySelectorAll('.login')
 
     if (cartCount.length > 0) {
         cartCount.forEach(button => {
@@ -25,6 +28,27 @@ if (!currentUser) {
     if (userName.length > 0) {
         userName.forEach(button => {
             button.innerHTML = currentUser.name
+        })
+    }
+
+    if (userName.length > 0) {
+        userName.forEach(button => {
+            button.classList.remove('hidden')
+        })
+    }
+    if (logOut.length > 0) {
+        logOut.forEach(button => {
+            button.classList.remove('hidden')
+        })
+    }
+    if (cartShow.length > 0) {
+        cartShow.forEach(button => {
+            button.classList.remove('hidden')
+        })
+    }
+    if (login.length > 0) {
+        login.forEach(button => {
+            button.classList.add('hidden')
         })
     }
 

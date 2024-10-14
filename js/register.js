@@ -71,7 +71,7 @@ function register() {
         });
 
         setTimeout(() => {
-            window.location.href = './login.html';
+            window.location.href = './login.js';
         }, 1000);
     }
 }
