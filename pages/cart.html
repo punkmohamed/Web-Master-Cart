@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="../images/trolley.png">
+
+
+</head>
+
+<body class="bg-gray-100 min-h-screen font-sans">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <i class="fas fa-store text-blue-500 text-2xl mr-2"></i>
+                            <span class="font-semibold text-gray-500 text-lg">E-Shop</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/" class="py-4 px-2 text-blue-500 border-b-4 border-blue-500 font-semibold">Home</a>
+                        <a href="#"
+                            class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Products</a>
+
+                    </div>
+                </div>
+                <div class="hidden sm:flex items-center space-x-5">
+                    <div class="py-2 px-3 font-medium text-gray-500">
+                        <i class="fas fa-user mr-2"></i>Welcome, <span id="" class="userName"> </span>
+                    </div>
+
+                    <a href="./cart.html"
+                        class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300 relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="ml-1">Cart</span>
+                        <span id=""
+                            class="cartCount absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"></span>
+                    </a>
+                    <button id=""
+                        class="logOut py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Log
+                        Out</button>
+                </div>
+                <div class="sm:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i class="fas fa-bars text-gray-500 text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu mx-10">
+            <ul class="">
+                <li><a href="/" class="block text-sm px-2 py-4 text-blue-500 bg-blue-50 font-semibold">Home</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Products</a>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">About</a></li>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Welcome,
+                        <span class="userName"></span></a></li>
+                <li><a href="./cart.html" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Cart
+                        <span class="cartCount p-2 px-3 rounded-full bg-red-600 text-white"></span></a>
+                </li>
+                <li class="logOut"><a href="#"
+                        class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Log
+                        Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Your Shopping Cart</h1>
+        <div id="cartTable" class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-2/3">
+                <div class="bg-white overflow-hidden shadow-xl rounded-lg">
+                    <div class="p-4 sm:p-6">
+                        <div id="cartContainer" class="space-y-4">
+                            <!-- Cart Item 1 -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/3">
+                <div id="orderSummary" class="bg-white overflow-hidden shadow-xl rounded-lg">
+                    <div class="p-4 sm:p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-4">Order Summary</h2>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-600">Subtotal</span>
+                            <span id="subTotal" class="text-sm font-medium text-gray-900"></span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-600">Shipping</span>
+                            <span class="text-sm font-medium text-gray-900">$5</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-600">Tax</span>
+                            <span class="text-sm font-medium text-gray-900">$10</span>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4 mb-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-base font-semibold text-gray-900">Total</span>
+                                <span id="totalAmount" class="text-xl font-bold text-blue-600"></span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyCart" class="hidden bg-white overflow-hidden shadow-xl rounded-lg mt-8">
+            <div class="p-4 sm:p-6 text-center">
+                <i class="fas fa-shopping-cart text-gray-400 text-5xl mb-4"></i>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
+                <p class="text-gray-600 mb-4">Looks like you haven't added any items to your cart yet.</p>
+                <a href="/"
+                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script.js" defer></script>
+
+</body>
+
+</html>

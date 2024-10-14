@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Home</title>
+    <link rel="icon" type="image/png" href="./images/trolley.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <style>
+        .card-zoom {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-zoom:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <i class="fas fa-store text-blue-500 text-2xl mr-2"></i>
+                            <span class="font-semibold text-gray-500 text-lg">E-Shop</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/" class="py-4 px-2 text-blue-500 border-b-4 border-blue-500 font-semibold">Home</a>
+                        <a href="#"
+                            class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Products</a>
+
+                    </div>
+                </div>
+                <div class="hidden sm:flex items-center space-x-5">
+                    <div class="py-2 px-3 font-medium text-gray-500">
+                        <i class="fas fa-user mr-2"></i>Welcome, <span id="" class="userName"> </span>
+                    </div>
+
+                    <a href="./pages/cart.html"
+                        class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-gray-200 transition duration-300 relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="ml-1">Cart</span>
+                        <span id=""
+                            class="cartCount absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"></span>
+                    </a>
+                    <button id=""
+                        class="logOut py-2 px-3 font-medium text-white bg-blue-500 rounded hover:bg-blue-400 transition duration-300">Log
+                        Out</button>
+                </div>
+                <div class="sm:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i class="fas fa-bars text-gray-500 text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu mx-10">
+            <ul class="">
+                <li><a href="/" class="block text-sm px-2 py-4 text-blue-500 bg-blue-50 font-semibold">Home</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Products</a>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">About</a></li>
+                </li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Welcome,
+                        <span class="userName"></span></a></li>
+                <li><a href="./pages/cart.html"
+                        class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Cart
+                        <span class="cartCount p-2 px-3 rounded-full bg-red-600 text-white"></span></a>
+                </li>
+                <li class="logOut"><a href="#"
+                        class="block text-sm px-2 py-4 hover:bg-blue-50 transition duration-300">Log
+                        Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto mt-10 px-4">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6 text-center">Welcome to E-Shop</h1>
+        <p class="text-xl text-gray-600 mb-8 text-center">Discover amazing products at unbeatable prices!</p>
+
+        <div id="spinner" class="flex justify-center items-center h-screen">
+            <div class="animate-spin rounded-full h-32 w-32 border-t-8 border-blue-500"></div>
+        </div>
+
+
+        <div class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-2 lg:m-10 mx-auto justify-items-center"
+            id="containerCards">
+
+        </div>
+        <script src="./js/script.js" defer></script>
+    </main>
+
+
+</body>
+
+</html>
