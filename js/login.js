@@ -89,3 +89,6 @@ function validateInput(type, input) {
     };
     return regex[type].test(input);
 }
+
+console.log(parseInt("123Hello"));
+console.log(parseInt("Hello123"));
